@@ -25,9 +25,9 @@ The project includes the following features:
 
 The project is created using the following technologies:
 
-- Technology 1
-- Technology 2
-- Technology 3
+- [OpenJDK 17.0.6](https://whichjdk.com/)
+- [JavaFX 20.0.1](https://openjfx.io/)
+- [Gradle 8.1.1](https://gradle.org/)
 
 ## License
 
