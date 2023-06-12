@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch JavaFX",
+            "request": "launch",
+            "mainClass": "cupid.siakad.app.App",
+            "vmArgs": "--module-path lib\\javafx-sdk-20.0.1\\lib --add-modules javafx.controls,javafx.fxml"
+        }
+    ]
+}
