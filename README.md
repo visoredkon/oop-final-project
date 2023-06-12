@@ -1,34 +1,29 @@
-# OOP Final Project
+# 🚀 Tugas Besar PBO: SIAKAD
 
-This is the final project for the Object-Oriented Programming (OOP) course. The project is designed to apply the concepts and techniques of OOP to create an application or software.
+Tugas Besar Pemrograman Berorientasi Objek (PBO/OOP)! Dalam project ini, kami menghadirkan SIAKAD (Sistem Informasi Akademik)!
 
-## Table of Contents
+## 📝 Daftar Isi
 
-- [Overview](#overview)
-- [Features](#features)
-- [Technologies](#technologies)
-- [License](#license)
+- [Ikhtisar](#ikhtisar)
+- [Fitur](#fitur)
+- [Teknologi](#teknologi)
 
-## Overview
+## 📚 Ikhtisar
 
-The OOP Final Project is a software application created using the OOP paradigm. It aims to demonstrate the use of OOP concepts and programming techniques in developing a functional and scalable application.
+SIAKAD dikembangkan menggunakan konsep dan teknik Pemrograman Berorientasi Objek (PBO/OOP). Tujuan dari project ini adalah untuk menciptakan aplikasi dengan mengimplementasikan pilar-pilar OOP.
 
-## Features
+## ⭐️ Fitur
 
-The project includes the following features:
+SIAKAD ini mencakup fitur-fitur berikut:
 
-- Feature 1
-- Feature 2
-- Feature 3
+- Fitur 1: [Deskripsi fitur 1]
+- Fitur 2: [Deskripsi fitur 2]
+- Fitur 3: [Deskripsi fitur 3]
 
-## Technologies
+## 🛠️ Teknologi
 
-The project is created using the following technologies:
+Project ini dibangun menggunakan teknologi-teknologi berikut:
 
-- [OpenJDK 17.0.6](https://whichjdk.com/)
-- [JavaFX 20.0.1](https://openjfx.io/)
-- [Gradle 8.1.1](https://gradle.org/)
-
-## License
-
-This project is licensed under the Unlicense license. See the [LICENSE](https://github.com/visoredkon/oop-final-project/blob/main/LICENSE) file for details.
+- [OpenJDK 17.0.7 2023-04-18 LTS](https://www.azul.com/downloads/?package=jdk#zulu)
+- [JavaFX 20.0.1](https://gluonhq.com/products/javafx/)
+- [MariaDB Connector/J](https://mariadb.com/downloads/connectors/connectors-data-access/java8-connector)
