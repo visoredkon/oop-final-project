@@ -1,5 +1,7 @@
 package SIAKAD.models;
 
+import SIAKAD.utils.DB;
+
 public class NilaiMataKuliah {
     private MataKuliah mataKuliah;
     private Mahasiswa mahasiswa;
@@ -43,5 +45,21 @@ public class NilaiMataKuliah {
 
     public void setNilai(double nilai) {
         this.nilai = nilai;
+    }
+
+    public Boolean updateNilai(double nilai) {
+        String tableName = "nilai_mata_kuliah";
+        String[] columns = {"nilai"};
+        Object[] values = {nilai};
+        String condition =
+                "kode_mata_kuliah = '"
+                        + mataKuliah.getKode()
+                        + "' AND mahasiswa_nim = '"
+                        + mahasiswa.getNim()
+                        + "'";
+
+        boolean success = DB.update(tableName, columns, values, condition);
+
+        return success;
     }
 }

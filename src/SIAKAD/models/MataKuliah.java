@@ -1,5 +1,10 @@
 package SIAKAD.models;
 
+import SIAKAD.utils.DB;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
 public class MataKuliah extends KodeEntityAbstract {
     private String kode;
     private String namaMataKuliah;
@@ -49,5 +54,31 @@ public class MataKuliah extends KodeEntityAbstract {
 
     public String getNameDosenPengajar() {
         return dosenPengajar.getName();
+    }
+
+    public static MataKuliah retrieveFromDatabase(String kode) {
+        String tableName = "mata_kuliah";
+        String condition = "kode = '" + kode + "'";
+        ResultSet resultSet = DB.select(tableName, null, condition);
+
+        MataKuliah mataKuliah = null;
+
+        try {
+            if (resultSet.next()) {
+                mataKuliah = new MataKuliah();
+                mataKuliah.setKode(resultSet.getString("kode"));
+                mataKuliah.setName(resultSet.getString("nama_mata_kuliah"));
+                mataKuliah.setProdi(resultSet.getString("prodi"));
+                mataKuliah.setSks(resultSet.getInt("sks"));
+                mataKuliah.setDosenPengajar(
+                        Dosen.retrieveFromDatabase(resultSet.getString("dosen_pengajar")));
+            } else {
+                return mataKuliah;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return mataKuliah;
     }
 }
