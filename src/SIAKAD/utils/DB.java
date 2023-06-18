@@ -29,6 +29,36 @@ public class DB {
         return connection;
     }
 
+    public static ResultSet selectAll(String tableName, String condition) {
+        String query = "SELECT * FROM " + tableName;
+        ResultSet resultSet = null;
+        Statement statement = null;
+
+        try {
+            Connection connection = getConnection();
+            statement = connection.createStatement();
+
+            if (condition != null && !condition.isEmpty()) {
+                query += " WHERE " + condition;
+            }
+
+            resultSet = statement.executeQuery(query);
+            return resultSet;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (statement != null) {
+                    statement.close();
+                }
+                closeConnection();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return null;
+    }
+
     public static ResultSet select(String tableName, String[] columns, String condition) {
         String query = "SELECT ";
         ResultSet resultSet = null;
@@ -148,6 +178,26 @@ public class DB {
             PreparedStatement statement = connection.prepareStatement(query);
             int rowsDeleted = statement.executeUpdate();
             return rowsDeleted > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                closeConnection();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return false;
+    }
+
+    public static boolean truncate(String tableName) {
+        try {
+            Connection connection = getConnection();
+            String query = "TRUNCATE TABLE " + tableName;
+
+            PreparedStatement statement = connection.prepareStatement(query);
+            int rowsTruncated = statement.executeUpdate();
+            return rowsTruncated == 0;
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
