@@ -1,0 +1,45 @@
+.borderless-field {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-padding: 5 10 5 10;
+    -fx-text-fill: #000000;
+    -fx-border-width: 0 0 1 0;
+    /* Setel lebar border hanya di bagian bawah tombol */
+    -fx-border-color: #000000;
+}
+
+.borderless-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0;
+    -fx-border-width: 0;
+    -fx-text-fill: -fx-text-base-color;
+    -fx-font-size: 1em;
+    /* Ubah angka sesuai kebutuhan */
+}
+
+.borderless-button:hover {
+    -fx-background-color: #B0B3C4;
+}
+
+.borderless-button:pressed {
+    -fx-background-color: #525252;
+}
+
+.responsive-imageview {
+    -fx-preserve-ratio: true;
+    -fx-smooth: true;
+    -fx-fit-width: 100%;
+    -fx-fit-height: 100%;
+}
+
+.invalid-login {
+    -fx-background-color: #fbd5d5d5;
+}
+
+.text-area-justify .content {
+    -fx-text-alignment: justify;
+    -fx-padding: 0.333em;
+    -fx-border-color: transparent;
+    -fx-background-color: transparent;
+    -fx-font-size: 14px;
+}
