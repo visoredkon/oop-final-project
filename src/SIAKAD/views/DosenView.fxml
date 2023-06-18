@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="mainAnchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+   minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: white;"
+   xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1"
+   fx:controller="SIAKAD.controllers.DosenGUIController">
+   <children>
+      <AnchorPane fx:id="headerAnchor" prefHeight="100.0" prefWidth="1280.0"
+         style="-fx-background-color: #071A84;" AnchorPane.leftAnchor="0.0"
+         AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="100.0" prefWidth="100.0"
+               AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fitHeight="50.0" fitWidth="50.0">
+                     <image>
+                        <Image url="@../resources/logoSIAKAD.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </VBox>
+            <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="1044.0" layoutY="31.0"
+               AnchorPane.rightAnchor="323.0" AnchorPane.topAnchor="29.0">
+               <image>
+                  <Image url="@../resources/logoUser.png" />
+               </image>
+            </ImageView>
+            <VBox layoutX="93.0" prefHeight="100.0" prefWidth="333.0">
+               <children>
+                  <HBox alignment="BOTTOM_LEFT" prefHeight="53.0" prefWidth="333.0">
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="SIAKAD"
+                           wrappingWidth="80.84765625">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="50.0" prefWidth="279.0">
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0"
+                           text="Cupid Meong Institute Of Technology">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox layoutX="966.0" layoutY="-1.0" prefHeight="100.0" prefWidth="315.0"
+               AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="105.0">
+                     <children>
+                        <Text fx:id="usernameText" fill="WHITE" strokeType="OUTSIDE"
+                           strokeWidth="0.0" text="USERNAME">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="210.0">
+                     <children>
+                        <Text fx:id="namaText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0"
+                           text="Nama Pengguna" wrappingWidth="198.41796875">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="sidebarAnchor" layoutY="100.0" prefHeight="620.0" prefWidth="150.0"
+         style="-fx-background-color: #BBC4D9;" AnchorPane.bottomAnchor="0.0"
+         AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <Button fx:id="dashboardButton" alignment="BASELINE_LEFT" layoutY="2.0"
+               mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0"
+               styleClass="borderless-button" stylesheets="@styles.css" text="Dashboard" />
+            <Button fx:id="dosenButton" alignment="BASELINE_LEFT" layoutY="37.0"
+               mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0"
+               styleClass="borderless-button" stylesheets="@styles.css" text="Dosen" />
+            <Button fx:id="mahasiswaButton" alignment="BASELINE_LEFT" layoutY="72.0"
+               mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0"
+               styleClass="borderless-button" stylesheets="@styles.css" text="Mahasiswa" />
+            <Button fx:id="mataKuliahButton" alignment="BASELINE_LEFT" layoutY="107.0"
+               mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0"
+               styleClass="borderless-button" stylesheets="@styles.css" text="Mata Kuliah" />
+            <Button fx:id="mataKuliahNilaiButton" alignment="BASELINE_LEFT" layoutY="142.0"
+               mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0"
+               styleClass="borderless-button" stylesheets="@styles.css" text="Nilai Mata Kuliah" />
+            <Button fx:id="logoutButton" layoutY="585.0" mnemonicParsing="false" prefHeight="35.0"
+               prefWidth="150.0" style="-fx-background-color: rgba(187, 144, 71, 1);"
+               stylesheets="@styles.css" text="Log Out" textFill="WHITE"
+               AnchorPane.bottomAnchor="0.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="contentAnchor" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="150.0"
+         AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+         <children>
+            <StackPane fx:id="contentStackPane" prefHeight="620.0" prefWidth="1130.0"
+               AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+               AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <fx:include source="DashboardView.fxml" />
+               </children>
+            </StackPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
