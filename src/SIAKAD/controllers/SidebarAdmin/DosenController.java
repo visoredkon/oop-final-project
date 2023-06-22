@@ -46,7 +46,7 @@ public class DosenController {
         dataDosen.clear();
         String tableName = "dosen";
         String condition = null;
-        ResultSet resultSet = DB.selectAll(tableName, condition);
+        ResultSet resultSet = DB.select(tableName, null, condition);
 
         try {
             while (resultSet.next()) {

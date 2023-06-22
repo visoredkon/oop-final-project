@@ -43,7 +43,7 @@ public class AdminController {
         dataAdmin.clear();
         String tableName = "admin";
         String condition = null;
-        ResultSet resultSet = DB.selectAll(tableName, condition);
+        ResultSet resultSet = DB.select(tableName, null, condition);
 
         try {
             while (resultSet.next()) {

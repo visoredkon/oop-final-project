@@ -21,6 +21,7 @@ public class AdminGUIController {
 
     @FXML
     private void initialize() {
+        // Inisialisasi fungsi tombol
         PageGUIController controller = new PageGUIController();
 
         dashboardButton.setOnAction(
@@ -43,6 +44,7 @@ public class AdminGUIController {
     public void setUsernameText(String username) {
         new LoggedController(username);
 
+        // Menampilkan username pada header halaman
         usernameText.setText(username);
         retrieveAdmin();
     }
@@ -50,6 +52,8 @@ public class AdminGUIController {
     private void retrieveAdmin() {
         String username = usernameText.getText();
         Admin admin = Admin.retrieveFromDatabase(username);
+
+        // Menampilkan nama pada header halaman
         namaText.setText(admin.getName());
     }
 }

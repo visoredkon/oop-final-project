@@ -17,6 +17,7 @@ public class DashboardGUIController {
 
     @FXML
     private void initialize() {
+        // Inisialisasi fungsi context menu
         ContextMenu contextMenu = new ContextMenu();
 
         MenuItem editMenuItem = new MenuItem("Edit");
@@ -50,6 +51,7 @@ public class DashboardGUIController {
         announcementText.setText(getContent());
     }
 
+    // Mengambil isi pengumuman
     private static String getContent() {
         String tableName = "pengumuman";
         String condition = "status = 'Active'";
@@ -66,6 +68,7 @@ public class DashboardGUIController {
         return null;
     }
 
+    // Update isi pengumuman
     private static boolean updateContent(String value) {
         String publisher = LoggedController.getUsername();
 

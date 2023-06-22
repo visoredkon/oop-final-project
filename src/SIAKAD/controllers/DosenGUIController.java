@@ -20,6 +20,7 @@ public class DosenGUIController {
 
     @FXML
     private void initialize() {
+        // Inisialisasi fungsi tombol
         PageGUIController controller = new PageGUIController();
 
         dashboardButton.setOnAction(
@@ -40,6 +41,7 @@ public class DosenGUIController {
     public void setUsernameText(String username) {
         new LoggedController(username);
 
+        // Menampilkan username pada header halaman
         usernameText.setText(username);
         retrieveDosen();
     }
@@ -47,6 +49,7 @@ public class DosenGUIController {
     private void retrieveDosen() {
         String username = usernameText.getText();
         Dosen dosen = Dosen.retrieveFromDatabase(username);
+        // Menampilkan nama pada header halaman
         namaText.setText(dosen.getName());
     }
 }

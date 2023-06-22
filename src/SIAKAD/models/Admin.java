@@ -37,6 +37,7 @@ public class Admin extends UserAbstract implements Contactable, KodeEntity {
         return Role.ADMIN;
     }
 
+    // Mengambil data admin dari database berdasarkan kode
     public static Admin retrieveFromDatabase(String kode) {
         String tableName = "admin";
         String condition = "kode = '" + kode + "'";
@@ -63,6 +64,7 @@ public class Admin extends UserAbstract implements Contactable, KodeEntity {
         return admin;
     }
 
+    // Menambahkan admin baru ke dalam database
     public boolean addAdmin() {
         try {
             String[] columns = {"username", "password", "name", "sex", "phone", "email", "address"};
@@ -85,6 +87,7 @@ public class Admin extends UserAbstract implements Contactable, KodeEntity {
         return false;
     }
 
+    // Mengupdate data admin di dalam database berdasarkan kode
     public boolean updateAdmin(String kode) {
         try {
             kode = kode == null || kode.isEmpty() ? this.kode : kode;
@@ -109,6 +112,7 @@ public class Admin extends UserAbstract implements Contactable, KodeEntity {
         return false;
     }
 
+    // Menghapus data admin dari database berdasarkan kode
     public boolean deleteAdmin() {
         try {
             boolean success = DB.delete("admin", "kode=" + kode);

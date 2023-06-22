@@ -12,10 +12,12 @@ public class MataKuliah extends KodeEntityAbstract {
     private int sks;
     private Dosen dosenPengajar;
 
+    @Override
     public String getKode() {
         return kode;
     }
 
+    @Override
     public void setKode(String kode) {
         this.kode = kode;
     }
@@ -56,6 +58,7 @@ public class MataKuliah extends KodeEntityAbstract {
         return dosenPengajar.getName();
     }
 
+    // Mengambil data mata kuliah dari database berdasarkan kode
     public static MataKuliah retrieveFromDatabase(String kode) {
         String tableName = "mata_kuliah";
         String condition = "kode = '" + kode + "'";

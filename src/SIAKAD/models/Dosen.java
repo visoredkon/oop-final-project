@@ -43,6 +43,7 @@ public class Dosen extends UserAbstract implements Contactable {
         return Role.DOSEN;
     }
 
+    // Mengambil data dosen dari database berdasarkan NIP
     public static Dosen retrieveFromDatabase(String nip) {
         String tableName = "dosen";
         String condition = "nip = '" + nip + "'";
@@ -70,6 +71,7 @@ public class Dosen extends UserAbstract implements Contactable {
         return dosen;
     }
 
+    // Menambahkan dosen baru ke dalam database
     public boolean addDosen() {
         try {
             String[] columns = {
@@ -95,6 +97,7 @@ public class Dosen extends UserAbstract implements Contactable {
         return false;
     }
 
+    // Mengupdate data dosen di dalam database berdasarkan kode
     public boolean updateDosen(String nip) {
         try {
             nip = nip == null || nip.isEmpty() ? this.nip : nip;
@@ -122,6 +125,7 @@ public class Dosen extends UserAbstract implements Contactable {
         return false;
     }
 
+    // Menghapus data dosen dari database berdasarkan kode
     public boolean deleteDosen() {
         try {
             boolean success = DB.delete("dosen", "nip=" + nip);

@@ -47,6 +47,7 @@ public class NilaiMataKuliah {
         this.nilai = nilai;
     }
 
+    // Mengupdate nilai mahasiswa pada mata kuliah tertentu
     public Boolean updateNilai(double nilai) {
         String tableName = "nilai_mata_kuliah";
         String[] columns = {"nilai"};

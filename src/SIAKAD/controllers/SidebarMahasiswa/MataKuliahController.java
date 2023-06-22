@@ -42,7 +42,7 @@ public class MataKuliahController {
         dataMataKuliah.clear();
         String tableName = "mata_kuliah";
         String condition = "prodi = '" + LoggedController.getMahasiswa().getProdi() + "'";
-        ResultSet resultSet = DB.selectAll(tableName, condition);
+        ResultSet resultSet = DB.select(tableName, null, condition);
 
         try {
             while (resultSet.next()) {

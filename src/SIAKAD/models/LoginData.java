@@ -11,24 +11,31 @@ public class LoginData {
     private String password;
     private Role role;
 
-    public LoginData(String data, String password, Role role) {
-        this.username = data;
-        this.password = password;
-        this.role = role;
-    }
-
     public String getUsername() {
         return username;
+    }
+
+    private void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
         return password;
     }
 
+    private void setPassowrd(String password) {
+        this.password = password;
+    }
+
     public Role getRole() {
         return role;
     }
 
+    private void setRole(Role role) {
+        this.role = role;
+    }
+
+    // Mengambil data login dari database berdasarkan username
     public static LoginData getLoginData(String username) {
         String tableName =
                 "(SELECT kode AS username, password, 'Admin' AS role FROM admin UNION ALL SELECT"
@@ -48,7 +55,10 @@ public class LoginData {
                     Role role = Role.fromString(resultSet.getString("role"));
 
                     if (role != null) {
-                        loginData = new LoginData(retrievedUsername, password, role);
+                        loginData = new LoginData();
+                        loginData.setUsername(retrievedUsername);
+                        loginData.setPassowrd(password);
+                        loginData.setRole(role);
                     }
                 }
             } catch (SQLException e) {

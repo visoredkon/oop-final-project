@@ -22,12 +22,15 @@ public class LoginGUIController {
 
     @FXML
     private void initialize() {
+        // Inisialisasi fungsi tombol dan key listener
         loginButton.setOnAction(event -> login());
         usernameField.setOnKeyPressed(this::handleEnterKey);
         passwordField.setOnKeyPressed(this::handleEnterKey);
     }
 
+    // Fungsi untuk menangani event key enter
     private void handleEnterKey(KeyEvent event) {
+        // Jika key yang ditekan adalah enter, maka lakukan login
         if (event.getCode() == KeyCode.ENTER) {
             login();
         }
@@ -37,8 +40,10 @@ public class LoginGUIController {
         String username = usernameField.getText();
         String password = passwordField.getText();
 
+        // Autentikasi username dan password
         LoginData loginData = authenticateAndGetData(username, password);
 
+        // Jika username dan password benar, maka tampilkan halaman sesuai role
         if (loginData != null) {
             navigateToMainView(loginData.getRole(), username);
         } else {
@@ -48,6 +53,7 @@ public class LoginGUIController {
         }
     }
 
+    // Fungsi untuk mengambil data login dari database berdasarkan username
     private LoginData authenticateAndGetData(String username, String password) {
         try {
             LoginData loginData = LoginData.getLoginData(username);
@@ -62,9 +68,11 @@ public class LoginGUIController {
         return null;
     }
 
+    // Fungsi untuk menampilkan halaman sesuai role
     private void navigateToMainView(Role role, String username) {
         try {
             Stage currentStage = (Stage) loginButton.getScene().getWindow();
+            // Ambil nama file fxml berdasarkan role
             String fxmlName = "../views/" + role.toString() + "View.fxml";
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlName));
@@ -86,6 +94,7 @@ public class LoginGUIController {
                 }
             }
 
+            // Ganti judul window dan tampilkan halaman
             currentStage.setTitle(role.toString() + " - SIAKAD");
             currentStage.setScene(new Scene(mainView));
             currentStage.show();

@@ -11,11 +11,6 @@ public enum Role {
         this.roleString = roleString;
     }
 
-    @Override
-    public String toString() {
-        return roleString;
-    }
-
     public static Role fromString(String role) {
         for (Role r : Role.values()) {
             if (r.roleString.equals(role)) {
@@ -23,5 +18,10 @@ public enum Role {
             }
         }
         return null;
+    }
+
+    @Override
+    public String toString() {
+        return roleString;
     }
 }

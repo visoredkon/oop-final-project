@@ -20,6 +20,7 @@ public class MahasiswaGUIController {
 
     @FXML
     private void initialize() {
+        // Inisialisasi fungsi tombol
         PageGUIController controller = new PageGUIController();
 
         dashboardButton.setOnAction(
@@ -46,6 +47,7 @@ public class MahasiswaGUIController {
     public void setUsernameText(String username) {
         new LoggedController(username);
 
+        // Menampilkan username pada header halaman
         usernameText.setText(username);
         retrieveMahasiswa();
     }
@@ -53,6 +55,7 @@ public class MahasiswaGUIController {
     private void retrieveMahasiswa() {
         String username = usernameText.getText();
         Mahasiswa mahasiswa = Mahasiswa.retrieveFromDatabase(username);
+        // Menampilkan nama pada header halaman
         namaText.setText(mahasiswa.getName());
     }
 }

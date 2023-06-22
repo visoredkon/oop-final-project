@@ -44,7 +44,7 @@ public class MahasiswaController {
         dataMahasiswa.clear();
         String tableName = "mahasiswa";
         String condition = "prodi = '" + LoggedController.getMahasiswa().getProdi() + "'";
-        ResultSet resultSet = DB.selectAll(tableName, condition);
+        ResultSet resultSet = DB.select(tableName, null, condition);
 
         try {
             while (resultSet.next()) {

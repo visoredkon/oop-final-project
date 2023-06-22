@@ -128,7 +128,7 @@ public class NilaiMataKuliahController {
         dataNilaiMataKuliah.clear();
         String tableName = "nilai_mata_kuliah";
         String condition = null;
-        ResultSet resultSet = DB.selectAll(tableName, condition);
+        ResultSet resultSet = DB.select(tableName, null, condition);
 
         try {
             while (resultSet.next()) {

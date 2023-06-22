@@ -53,7 +53,7 @@ public class NilaiMataKuliahController {
         dataNilaiMataKuliah.clear();
         String tableName = "nilai_mata_kuliah";
         String condition = "mahasiswa_nim = '" + LoggedController.getMahasiswa().getNim() + "'";
-        ResultSet resultSet = DB.selectAll(tableName, condition);
+        ResultSet resultSet = DB.select(tableName, null, condition);
 
         try {
             while (resultSet.next()) {

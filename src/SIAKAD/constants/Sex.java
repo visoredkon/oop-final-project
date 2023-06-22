@@ -10,11 +10,6 @@ public enum Sex {
         this.sexString = sexString;
     }
 
-    @Override
-    public String toString() {
-        return sexString;
-    }
-
     public static Sex fromString(String sex) {
         for (Sex s : Sex.values()) {
             if (s.sexString.equals(sex)) {
@@ -22,5 +17,10 @@ public enum Sex {
             }
         }
         return null;
+    }
+
+    @Override
+    public String toString() {
+        return sexString;
     }
 }

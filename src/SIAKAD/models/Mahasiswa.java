@@ -52,6 +52,7 @@ public class Mahasiswa extends UserAbstract implements Contactable {
         return Role.MAHASISWA;
     }
 
+    // Mengambil data mahasiswa dari database berdasarkan NIM
     public static Mahasiswa retrieveFromDatabase(String nim) {
         String tableName = "mahasiswa";
         String condition = "nim = '" + nim + "'";
@@ -80,6 +81,7 @@ public class Mahasiswa extends UserAbstract implements Contactable {
         return mahasiswa;
     }
 
+    // Menambahkan data mahasiswa ke database
     public boolean addMahasiswa() {
         try {
             String[] columns = {"nim", "password", "prodi", "name", "sex", "phone", "address"};
@@ -96,6 +98,7 @@ public class Mahasiswa extends UserAbstract implements Contactable {
         return false;
     }
 
+    // Mengubah data mahasiswa di database
     public boolean updateMahasiswa(String nim) {
         try {
             nim = nim == null || nim.isEmpty() ? this.nim : nim;
@@ -114,6 +117,7 @@ public class Mahasiswa extends UserAbstract implements Contactable {
         return false;
     }
 
+    // Menghapus data mahasiswa dari database
     public boolean deleteMahasiswa() {
         try {
             String tableName = "mahasiswa";

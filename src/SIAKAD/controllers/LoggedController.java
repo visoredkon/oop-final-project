@@ -16,6 +16,7 @@ public class LoggedController {
         return username;
     }
 
+    // Mengecek apakah user yang sedang login adalah admin
     public static boolean isAdmin() {
         LoginData loginData = LoginData.getLoginData(username);
         if (loginData.getRole() == Role.ADMIN) {
